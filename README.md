@@ -1,10 +1,10 @@
-# Growing colorectal cancer caseloads without a rise in age-adjusted risk in a rapidly ageing Asian country
+# Population ageing, not rising treatment rates, explains growing colorectal cancer caseloads in Korea
 
 Analysis code for the manuscript
 
-> Kim S. *Growing colorectal cancer caseloads without a rise in age-adjusted risk in a rapidly ageing Asian country.* Manuscript submitted for publication.
+> Kim S. *Population ageing, not rising treatment rates, explains growing colorectal cancer caseloads in Korea.* Manuscript submitted for publication.
 
-Archived release: Zenodo, https://doi.org/10.5281/zenodo.24332186 (v1.0.0).
+Archived release: Zenodo, https://doi.org/10.5281/zenodo.24332391 (v1.0.1).
 
 ## Contents
 
@@ -15,7 +15,7 @@ This repository contains code only. The processed district-year data (master tab
 | `01_스크립트/` | Analysis scripts (below) |
 | `04_분석/CRC/sets_CRC_std3.json`, `config_CRC_std3.json`, `narrative_CRC.md` | Prespecified covariates, expected directions, forced controls, and model settings |
 | `04_분석/CRC/run_std3_chain.sh` | Order in which the model scripts were run |
-| `04_분석/CRC/MS/build/numbers_crc.py` | Reads the result tables and computes every number reported in the manuscript, with consistency checks |
+| `04_분석/CRC/MS/build/numbers_crc.py` | Reads the result tables and computes every number reported in the manuscript, including the three-factor decomposition of the change in treated people (population growth, population ageing, age-specific treatment rates), with consistency checks |
 | `04_분석/CRC/MS/build/figs_crc.py` | Draws Figures 1-2 and Supplementary Fig. S1 from the result tables and the boundary file |
 
 Folder and some column names are in Korean because the source tables are Korean; each script has a header comment that describes its inputs and outputs.

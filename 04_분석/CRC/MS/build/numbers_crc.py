@@ -26,6 +26,22 @@ def load():
     un = {yr: 1e5 * float((g.set_index("age").rate * w).sum()) for yr, g in A.groupby("year")}; N["asr_unresc"] = un
     assert (round(un[2011], 1), round(un[2024], 1)) == (279.3, 249.6), (un[2011], un[2024])
     N["agerate_2024"] = A[A.year == 2024].set_index("age").rate.to_dict()
+    # 2011→2024 진료 인원 변화 분해(인구 규모·연령 구조·연령별 진료율, Das Gupta 대칭 3요인; Cheng 2020 PLoS Med 방식, 2026-11-18 추가 — 다른 수치 불변)
+    import itertools
+    def _cmp(yr):
+        g = A[A.year == yr].set_index("age").sort_index(); k = y.cases[yr] / g.patients_sum.sum(); pop = g.denom_nat.sum()
+        return [pop, (g.denom_nat / pop).values, (g.rate * k).values]
+    X0, X1 = _cmp(2011), _cmp(2024); _f = lambda p, s_, r: p * float((s_ * r).sum())
+    def _eff(i):
+        o = [j for j in range(3) if j != i]; t = 0.0
+        for cb in itertools.product([0, 1], repeat=2):
+            a0 = list(X0)
+            for j, c in zip(o, cb): a0[j] = (X0, X1)[c][j]
+            a1 = list(a0); a1[i] = X1[i]; t += (1 / 3 if sum(cb) in (0, 2) else 1 / 6) * (_f(*a1) - _f(*a0))
+        return t
+    _e = [_eff(i) for i in range(3)]; _c0 = _f(*X0)
+    assert abs(_c0 - y.cases[2011]) < 1 and abs(sum(_e) - (y.cases[2024] - y.cases[2011])) < 1
+    N["decomp"] = {"total": 100 * (y.cases[2024] / y.cases[2011] - 1), "growth": 100 * _e[0] / _c0, "ageing": 100 * _e[1] / _c0, "rates": 100 * _e[2] / _c0}
     T1 = {}
     for wn, a, b in WIN + [("2011-2024", 2011, 2024)]:
         q = P[(P.year >= a) & (P.year <= b)]; sir = q.groupby("fbd_region").apply(lambda d: d.cases.sum() / d.E.sum(), include_groups=False)

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Growing colorectal cancer caseloads without a rise in age-adjusted risk in a rapidly ageing Asian country (analysis code)"
+authors:
+  - family-names: Kim
+    given-names: Seongdae
+    affiliation: Hongik University
+    orcid: "https://orcid.org/0000-0002-1525-0091"
+version: "1.0.0"
+date-released: 2026-11-18
+license: MIT
+repository-code: "https://github.com/Seongdae-Kim-Hongik/colorectal-caseload-ageing-korea"
+doi: 10.5281/zenodo.24332186

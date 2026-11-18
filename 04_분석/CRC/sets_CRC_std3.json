@@ -1,0 +1,151 @@
+{
+ "tag": "CRC",
+ "outcome_column": "nhis__대장암__진료실인원수",
+ "fixed_on": "2026-11-06 (결과 보기 전 사전지정; 데이터 값 미열람, 변수사전만 사용)",
+ "forced": [
+  "eloc__DT_1YL20421E__1인당도시지역면적현황__도시지역인구",
+  "eloc__DT_1YL20981__인구천명당의료기관종사의사수＜br＞(A÷B×1000)",
+  "eloc__DT_1YL20701__남녀성비＜br＞(A÷B×100)",
+  "eloc__DT_1YL20891__재정자주도(세입과목개편전)",
+  "ext__pop80_share"
+ ],
+ "negative_controls": [
+  "eloc__DT_1YL13901__뺑소니교통사고율＜br＞(A÷B×100)",
+  "eloc__DT_1YL20331__지수__계",
+  "eloc__DT_1YL21081__주민만명당화재발생건수＜br＞(A÷B×10000)"
+ ],
+ "sets": {
+  "S1_narrative_full": [
+   "kchs__DT_117075_H_DR_HIGH_WH__SR",
+   "kchs__DT_H_SM__SR",
+   "chk__정상B_비만관리_수검자대비비율",
+   "chk__정상B_당뇨관리_수검자대비비율",
+   "chk__대사_복부비만_비율",
+   "kchs__DT_H_EX_WALK__SR",
+   "kchs__DT_H_EX_PHY__SR",
+   "fac__total",
+   "fac__생활체육관",
+   "vil__계",
+   "nhis__의료급여1종__진료실인원수",
+   "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)",
+   "eloc__DT_1YL202004__노후주택비율(A÷B×100)",
+   "eloc__DT_1YL15004__상용직비중＜br＞(A÷B×100)",
+   "chk__수검률",
+   "ext__alcohol_venues_per10k",
+   "ext__restaurants_per10k",
+   "ext__delivery_per10k"
+  ],
+  "S2_core": [
+   "kchs__DT_117075_H_DR_HIGH_WH__SR",
+   "kchs__DT_H_SM__SR",
+   "chk__정상B_비만관리_수검자대비비율",
+   "chk__정상B_당뇨관리_수검자대비비율",
+   "chk__대사_복부비만_비율",
+   "kchs__DT_H_EX_PHY__SR",
+   "nhis__의료급여1종__진료실인원수",
+   "chk__수검률",
+   "ext__alcohol_venues_per10k"
+  ],
+  "S3_physical_activity": [
+   "kchs__DT_H_EX_WALK__SR",
+   "kchs__DT_H_EX_PHY__SR",
+   "fac__total",
+   "fac__생활체육관",
+   "vil__계"
+  ],
+  "S4_socioeconomic_detection": [
+   "nhis__의료급여1종__진료실인원수",
+   "eloc__DT_1YL15004__상용직비중＜br＞(A÷B×100)",
+   "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)",
+   "eloc__DT_1YL202004__노후주택비율(A÷B×100)",
+   "chk__수검률"
+  ],
+  "S5_food_alcohol_environment": [
+   "kchs__DT_117075_H_DR_HIGH_WH__SR",
+   "ext__alcohol_venues_per10k",
+   "ext__restaurants_per10k",
+   "ext__delivery_per10k",
+   "chk__정상B_비만관리_수검자대비비율",
+   "chk__대사_복부비만_비율"
+  ]
+ },
+ "transform": {
+  "chk__수검률": "none",
+  "chk__정상B_당뇨관리_수검자대비비율": "none",
+  "chk__정상B_비만관리_수검자대비비율": "none",
+  "eloc__DT_1YL12701__독거노인가구비율＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL13901__뺑소니교통사고율＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL15004__상용직비중＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL202004__노후주택비율(A÷B×100)": "none",
+  "eloc__DT_1YL20331__지수__계": "none",
+  "eloc__DT_1YL20421E__1인당도시지역면적현황__도시지역인구": "share_of_pop(도시지역인구÷population(마스터))",
+  "eloc__DT_1YL20631__고령인구비율＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL20701__남녀성비＜br＞(A÷B×100)": "none",
+  "eloc__DT_1YL20891__재정자주도(세입과목개편전)": "none",
+  "eloc__DT_1YL20981__인구천명당의료기관종사의사수＜br＞(A÷B×1000)": "none",
+  "eloc__DT_1YL21081__주민만명당화재발생건수＜br＞(A÷B×10000)": "none",
+  "fac__total": "per100k",
+  "fac__생활체육관": "per100k",
+  "kchs__DT_117075_H_DR_HIGH_WH__SR": "none",
+  "kchs__DT_H_EX_PHY__SR": "none",
+  "kchs__DT_H_EX_WALK__SR": "none",
+  "kchs__DT_H_SM__SR": "none",
+  "nhis__의료급여1종__진료실인원수": "per100k",
+  "vil__계": "per100k",
+  "ext__pop80_share": "none",
+  "chk__대사_복부비만_비율": "none",
+  "ext__alcohol_venues_per10k": "none",
+  "ext__restaurants_per10k": "none",
+  "ext__delivery_per10k": "none",
+  "ext__outside_care_share": "none"
+ },
+ "rules": {
+  "likelihood": "forced-only 모형 WAIC 낮은 쪽(Poisson/NB)",
+  "set_choice": "WAIC 최소, 4 이내면 변수 적은 세트",
+  "credible": "95% CrI 1 제외",
+  "vif_drop": 10,
+  "multiverse_specs": 200,
+  "main_model_note": "시리즈 규칙(10/6 저자 결정)대로 주모형=S1_narrative_full(가설 15개+강제통제 5개). VIF>10 유지·보고. 결측 연도(2013년 이전 상용직·복부비만, 2015년 이전 노후주택)는 해당 셀 처리 규칙대로. S3는 대사 매개 없이 신체활동 총효과, S1·S2는 비만·당뇨·복부비만을 통제한 직접효과로 읽음."
+ },
+ "note": "다른 질환 풀과 독립 구성(대장암 병인: 음주·흡연·비만·복부비만·당뇨/고혈당, 신체활동(결장암 보호), 사회경제, 검진 검출). 적색육·가공육·식이섬유 시군구 지표 없음 → 한계. 대장암 검진(분변잠혈) 수검률 시군구 지표 없음 → 일반검진 수검률을 검출 대리로. per100k 분모는 마스터 population. 근거 문헌은 refs_CRC.csv(PMID 검증).",
+ "extra_columns": {
+  "ext__pop80_share": [
+   "CRC_Estd2.csv",
+   "pop80_share_raw"
+  ],
+  "ext__alcohol_venues_per10k": [
+   "EXT_canonical_pool_261106.csv",
+   "alcohol_venues_per10k"
+  ],
+  "ext__restaurants_per10k": [
+   "EXT_canonical_pool_261106.csv",
+   "restaurants_per10k"
+  ],
+  "ext__delivery_per10k": [
+   "EXT_canonical_pool_261106.csv",
+   "delivery_per10k"
+  ],
+  "ext__outside_care_share": [
+   "EXT_canonical_pool_261106.csv",
+   "outside_care_share"
+  ]
+ },
+ "offset_E_column": "E_std2",
+ "offset_E_label": "age-standardised E, fine age bands (E_std2)",
+ "graph": "593-edge contact graph (BRCA 2026-11-04 graph_audit: polygon intersections + six retained island links; 227+2 components), ST_GRAPH=04_분석/CRC/graph_593.graph",
+ "population_override": [
+  {
+   "year": 2023,
+   "fbd_region": "경상남도창원시",
+   "population": 1009038,
+   "source": "KOSIS DT_1YL20651E 2023 통합창원시 계; FBD_DATA_ZIP/2023.csv 창원 블록이 2022값 복사(유방암 11/4 population_final_audit)"
+  }
+ ],
+ "offset_E_file": "CRC_Estd2.csv",
+ "fixed_on_std3": "2026-11-06 (결과 열람 전)",
+ "std3_note": "2026-11-06 8호 착수(결과 열람 전, 런북 15 §1-B std3 표준, 7호 간암 체인 복제). 주분석 = S1_narrative_full(가설 15 + forced 5: 도시성·의사 수·성비·재정자주도·80세 이상). E = E_std2(10구간·75+, 창원 2023 교정). 음성대조 = 뺑소니·교통문화지수·화재. 비교 결과 = 위암(GCA, 같은 국가 암검진 경로)·관절염(ARTH). 민감도 = s577·s2·s8, KH I-IV, 88k review(심사 선제, 17 §6).",
+ "sensitivity_only_extra": [
+  "ext__outside_care_share"
+ ],
+ "pool_note_261106": "2026-11-06 저자 지시(대장암부터 신규 수집 지표를 풀에 충분히 반영) — 결과 열람 전 추가. 정본 통합자료_261030 신규 지표 중 대장암 기전이 있는 3개를 가설로 추가: 유흥·단란주점 밀도(+, 음주 환경), 일반음식점 밀도(+, 외식·적색육·가공식품 노출), 배달 위주 업소 밀도(+, 고지방·가공 식이 환경). 관외 외래 비율은 진료 접근성 대리로 주모형 밖 민감도 전용(플레이북 17 §6 A2). 목욕장업·HACCP·KOSIS 기업 수는 대장암 기전이 없거나(HACCP 생존 편향, KOSIS 2016부터) 제외. 추출 01_스크립트/99b_extra_canonical_pool.py(코드표 결합, 군위군 37310 별칭)."
+}
